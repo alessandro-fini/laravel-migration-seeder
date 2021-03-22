@@ -20,7 +20,7 @@ class CreatePassengersTable extends Migration
             $table->string('address');
             $table->string('country');
             $table->string('phone');
-            $table->string('passenger_id');
+            $table->string('passenger_id')->unique();
             $table->string('train_car');
             $table->float('price', 6,2);
             $table->timestamps();
