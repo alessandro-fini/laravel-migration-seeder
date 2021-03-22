@@ -27,7 +27,7 @@ class PassengerController extends Controller
      */
     public function create()
     {
-        //
+        return view('passengers.create');
     }
 
     /**
@@ -38,7 +38,12 @@ class PassengerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $inputPassenger = new Passenger();
+        $inputPassenger->fill($data);
+        $inputPassenger->save();
+
+        return redirect()->route('passengers.index');
     }
 
     /**
